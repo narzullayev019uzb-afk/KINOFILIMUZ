@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin panel — KINOFILMUZ</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+
+<script src="config.js"></script>
+</head>
+<body>
+
+<!-- LOGIN GATE -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-box">
+    <div class="logo" style="justify-content:center;display:flex;margin-bottom:8px;">KINO<span>FILM</span>UZ</div>
+    <p class="login-sub">Super Admin panel</p>
+    <input type="password" id="passwordInput" placeholder="Parolni kiriting" autocomplete="off">
+    <button class="btn btn-primary" id="loginBtn" style="width:100%;justify-content:center;">Kirish</button>
+    <p class="login-error" id="loginError"></p>
+  </div>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="dashboard" class="dashboard" style="display:none;">
+  <header class="admin-header">
+    <div class="logo">KINO<span>FILM</span>UZ <small>ADMIN</small></div>
+    <div class="admin-header__actions">
+      <a href="index.html" target="_blank" class="btn btn-ghost btn-small">🌐 Saytni ko'rish</a>
+      <button class="btn btn-ghost btn-small" id="logoutBtn">Chiqish</button>
+    </div>
+  </header>
+
+  <div class="admin-wrap">
+    <div class="stats-row" id="statsRow"></div>
+
+    <div class="panel">
+      <div class="panel__head">
+        <h2 id="formTitle">Yangi kino qo'shish</h2>
+      </div>
+      <form id="movieForm" class="movie-form">
+        <input type="hidden" id="editId">
+        <div class="form-grid">
+          <div class="field">
+            <label>Nomi *</label>
+            <input type="text" id="fTitle" required placeholder="Masalan: Yulduzlar orasida">
+          </div>
+          <div class="field">
+            <label>Turi *</label>
+            <select id="fCategory" required>
+              <option value="kino">Kino</option>
+              <option value="serial">Serial</option>
+              <option value="animatsiya">Animatsiya</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Janr</label>
+            <input type="text" id="fGenre" placeholder="Fantastika, Drama...">
+          </div>
+          <div class="field">
+            <label>Yil</label>
+            <input type="text" id="fYear" placeholder="2026">
+          </div>
+          <div class="field">
+            <label>Reyting (0-10)</label>
+            <input type="text" id="fRating" placeholder="8.5">
+          </div>
+          <div class="field field--checkbox">
+            <label class="checkbox-label">
+              <input type="checkbox" id="fFeatured">
+              <span>Bosh sahifada ko'rsatish (hero)</span>
+            </label>
+          </div>
+          <div class="field field--full">
+            <label>Poster rasm havolasi (URL)</label>
+            <input type="text" id="fPoster" placeholder="https://...">
+          </div>
+          <div class="field field--full">
+            <label>Fon rasm havolasi — backdrop (URL)</label>
+            <input type="text" id="fBackdrop" placeholder="https://...">
+          </div>
+          <div class="field field--full">
+            <label>Tomosha qilish havolasi</label>
+            <input type="text" id="fWatchLink" placeholder="https://...">
+          </div>
+          <div class="field field--full">
+            <label>Tavsif</label>
+            <textarea id="fDesc" rows="3" placeholder="Kino haqida qisqacha..."></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">+ Qo'shish</button>
+          <button type="button" class="btn btn-ghost" id="cancelEditBtn" style="display:none;">Bekor qilish</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel">
+      <div class="panel__head">
+        <h2>Barcha kinolar</h2>
+        <input type="text" id="adminSearch" placeholder="Qidirish..." class="admin-search">
+      </div>
+      <div id="movieTable" class="movie-table"></div>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

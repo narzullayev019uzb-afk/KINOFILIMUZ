@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KINOFILMUZ — Zamonaviy kino olami</title>
+<meta name="description" content="KINOFILMUZ — eng so'nggi kinolar, seriallar va animatsion filmlar bir joyda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+
+<script src="config.js"></script>
+</head>
+<body>
+
+<div class="marquee"><div class="marquee__track" id="marqueeTrack">HOZIR KO'RSATILMOQDA &nbsp;•&nbsp; YANGI KINOLAR HAR KUNI QO'SHILADI &nbsp;•&nbsp; KINOFILMUZ — SIZNING KINO OLAMINGIZ &nbsp;•&nbsp; HOZIR KO'RSATILMOQDA &nbsp;•&nbsp; YANGI KINOLAR HAR KUNI QO'SHILADI &nbsp;•&nbsp; KINOFILMUZ — SIZNING KINO OLAMINGIZ &nbsp;•&nbsp;</div></div>
+
+<header class="site">
+  <div class="logo">KINO<span>FILM</span>UZ</div>
+  <nav class="site-nav">
+    <a href="#hero">Bosh sahifa</a>
+    <a href="#kino">Kinolar</a>
+    <a href="#serial">Seriallar</a>
+    <a href="#animatsiya">Animatsiya</a>
+  </nav>
+  <div class="search-box">
+    <span>🔍</span>
+    <input type="text" id="searchInput" placeholder="Kino qidirish...">
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div id="heroSlides"></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__content" id="heroContent">
+    <!-- JS orqali to'ldiriladi -->
+  </div>
+  <div class="hero__dots" id="heroDots"></div>
+</section>
+
+<div class="filmstrip"></div>
+
+<main id="mainContent">
+  <div class="loader"><div class="reel"></div></div>
+</main>
+
+<footer class="site">
+  <div>© 2026 KINOFILMUZ. Barcha huquqlar himoyalangan.</div>
+  <div>Ishtiyoq bilan yaratildi 🎬</div>
+</footer>
+
+<!-- Movie detail modal -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <div class="modal__hero" id="modalHero">
+      <button class="modal__close" id="modalClose">✕</button>
+    </div>
+    <div class="modal__body">
+      <h2 id="modalTitle"></h2>
+      <div class="modal__tags" id="modalTags"></div>
+      <p class="modal__desc" id="modalDesc"></p>
+      <a class="btn btn-primary" id="modalWatchBtn" target="_blank" rel="noopener">▶ Tomosha qilish</a>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

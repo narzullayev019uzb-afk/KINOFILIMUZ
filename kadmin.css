@@ -1,0 +1,91 @@
+.login-screen{
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(circle at 50% 20%, #1c1710 0%, var(--bg) 65%);
+}
+.login-box{
+  width:100%; max-width:360px; padding:40px 34px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:10px; box-shadow:var(--shadow-deep);
+  text-align:center;
+}
+.login-sub{color:var(--muted-2); font-size:12px; letter-spacing:0.15em; text-transform:uppercase; margin:0 0 26px;}
+.login-box input{
+  width:100%; padding:13px 16px; margin-bottom:16px;
+  background:var(--bg-elevated); border:1px solid var(--border); border-radius:6px;
+  color:var(--cream); font-size:14px; outline:none;
+}
+.login-box input:focus{border-color:var(--gold);}
+.login-error{color:var(--crimson-bright); font-size:12.5px; min-height:18px; margin-top:12px;}
+
+.admin-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 5vw; border-bottom:1px solid var(--border);
+  position:sticky; top:0; background:rgba(10,8,6,0.92); backdrop-filter:blur(10px); z-index:10;
+}
+.admin-header .logo small{
+  font-family:'Inter',sans-serif; font-size:10px; color:var(--gold); letter-spacing:0.2em;
+  background:rgba(212,169,74,0.12); padding:3px 8px; border-radius:20px; margin-left:8px; vertical-align:middle;
+}
+.admin-header__actions{display:flex; gap:10px;}
+
+.admin-wrap{max-width:1100px; margin:0 auto; padding:36px 5vw 80px;}
+
+.stats-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:32px;}
+.stat-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:8px;
+  padding:20px 22px;
+}
+.stat-card__num{font-family:'Playfair Display',serif; font-size:32px; color:var(--gold-bright);}
+.stat-card__label{font-size:12px; color:var(--muted-2); letter-spacing:0.08em; text-transform:uppercase; margin-top:4px;}
+
+.panel{
+  background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  padding:28px 30px; margin-bottom:28px;
+}
+.panel__head{display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:12px;}
+.panel__head h2{font-size:19px; margin:0;}
+
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+.field--full{grid-column:1 / -1;}
+.field--checkbox{display:flex; align-items:flex-end;}
+.field label{display:block; font-size:12px; color:var(--muted); margin-bottom:7px; letter-spacing:0.03em;}
+.field input, .field select, .field textarea{
+  width:100%; padding:11px 14px;
+  background:var(--bg-elevated); border:1px solid var(--border); border-radius:6px;
+  color:var(--cream); font-size:14px; font-family:inherit; outline:none;
+  transition:border-color .3s;
+}
+.field input:focus, .field select:focus, .field textarea:focus{border-color:var(--gold);}
+.field textarea{resize:vertical;}
+.checkbox-label{display:flex; align-items:center; gap:10px; font-size:13.5px; color:var(--cream); cursor:pointer; padding-bottom:11px;}
+.checkbox-label input{width:auto;}
+
+.form-actions{display:flex; gap:12px; margin-top:22px;}
+
+.admin-search{
+  padding:9px 16px; background:var(--bg-elevated); border:1px solid var(--border);
+  border-radius:20px; color:var(--cream); font-size:13px; outline:none; min-width:200px;
+}
+
+.movie-table{display:flex; flex-direction:column; gap:10px;}
+.movie-row{
+  display:flex; align-items:center; gap:16px;
+  padding:12px 14px; background:var(--bg-elevated); border:1px solid var(--border); border-radius:8px;
+}
+.movie-row img{width:44px; height:62px; object-fit:cover; border-radius:4px; background:var(--surface-2);}
+.movie-row__info{flex:1; min-width:0;}
+.movie-row__title{font-weight:600; font-size:14.5px; color:var(--cream); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.movie-row__meta{font-size:12px; color:var(--muted-2); margin-top:2px;}
+.movie-row__actions{display:flex; gap:8px;}
+.icon-btn{
+  width:34px; height:34px; border-radius:6px; border:1px solid var(--border);
+  background:transparent; color:var(--muted); font-size:14px;
+  display:flex; align-items:center; justify-content:center; transition:all .25s;
+}
+.icon-btn:hover{background:var(--surface-2); color:var(--gold-bright);}
+.icon-btn.danger:hover{color:var(--crimson-bright); border-color:var(--crimson-bright);}
+
+@media (max-width:700px){
+  .form-grid{grid-template-columns:1fr;}
+  .admin-wrap{padding:28px 5vw 60px;}
+}
